@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:customVM="clr-namespace:LanguageTrainer.VM"
+                    xmlns:customView="clr-namespace:LanguageTrainer.View"
+                    xmlns:vm="clr-namespace:MK.UI.WPF.VM;assembly=MK.UI.WPF"
+                    xmlns:controls="clr-namespace:MK.UI.WPF.Controls;assembly=MK.UI.WPF">
+    <DataTemplate DataType="{x:Type customVM:TestVM}">
+        <customView:TestView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:MainWindowVM}">
+        <customView:MainWindowView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:TestConfigurationVM}">
+        <customView:TestConfigurationView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:LanguageChooserVM}">
+        <customView:LanguageChooserView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:SearchPanelVM}">
+        <customView:SearchPanelView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:ExpressionVM}">
+        <customView:ExpressionView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:TranslationVM}">
+        <customView:TranslationView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type customVM:TranslateVM}">
+        <customView:TranslateView/>
+    </DataTemplate>
+</ResourceDictionary>

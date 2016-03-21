@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="LanguageTrainer.View.TestConfigurationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:loc="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+             xmlns:cv="clr-namespace:MK.UI.WPF.Converters;assembly=MK.UI.WPF"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             MinHeight="125" MinWidth="300">
+    <UserControl.Resources>
+        <cv:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+    </UserControl.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding StartTrainingCommand}" 
+                    HorizontalAlignment="Left" 
+                    Margin="2" 
+                    ToolTip="Rozpocznij test z ocenianiem odpowiedzi">
+                <Image Source="pack://application:,,,/Resources/Icons/Start.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding StartTrainingCommandWithoutEvaluation}" 
+                    HorizontalAlignment="Left" 
+                    Margin="2" 
+                    ToolTip="Rozpocznij test bez oceniania odpowiedzi"
+                    IsEnabled="{Binding ElementName=FlashCardsAlgorithm, Path=IsChecked, Converter={StaticResource ResourceKey=InverseBooleanConverter}}">
+                <Image Source="pack://application:,,,/Resources/Icons/Start2.ico" Width="32" Height="32"></Image>
+            </Button>
+        </StackPanel>
+
+        <TextBlock xml:space="preserve">Wybierz wyrażenia:</TextBlock>
+        <RadioButton IsChecked="{Binding AllExpressions}" 
+                     GroupName="Config" 
+                     Margin="2"
+                     IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
+                     Content="Wszystkie"/>
+        <RadioButton IsChecked="{Binding AllExpressionsWithoutNew}" 
+                     GroupName="Config" 
+                     Margin="2"
+                     IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
+                     Content="Wszystkie bez nowych"/>
+        <RadioButton IsChecked="{Binding OnlyNewExpressions}" 
+                     GroupName="Config" 
+                     Margin="2"
+                     IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"
+                     Content="Nowe wyrażenia"/>
+        <RadioButton IsChecked="{Binding ExpressionsWithLastWrongAnswer}" 
+                     GroupName="Config" 
+                     Margin="2"
+                     IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"
+                     Content="Ostatnio źle odpowiedziane"/>
+
+        <TextBlock xml:space="preserve">Dodatkowe opcje filtrowania:</TextBlock>
+        <CheckBox IsChecked="{Binding OnlySelected}" 
+                  Content="{loc:LocText Key=ChooseOnlySelected, Dict=Lbl, Assembly=LanguageTrainer.Resources}" 
+                  Margin="2" 
+                  IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"/>
+        <CheckBox IsChecked="{Binding RecentlyUsed}" 
+                  Content="{loc:LocText Key=UseRecentlyUsed, Dict=Lbl, Assembly=LanguageTrainer.Resources}" 
+                  Margin="2" 
+                  IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"/>
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock xml:space="preserve">Utworzone od do:</TextBlock>
+            <xctk:DateTimePicker 
+                Margin="2"
+                HorizontalAlignment="Left"
+                Width="225"
+                Value="{Binding CreatedFromDate}"/>
+            <xctk:DateTimePicker 
+                Margin="2" 
+                HorizontalAlignment="Left"
+                Width="225"
+                Value="{Binding CreatedToDate}"/>
+         </StackPanel>
+        
+        <TextBlock xml:space="preserve">Co chcesz ćwiczyć:</TextBlock>
+        <CheckBox IsChecked="{Binding Reverse}" 
+                  Margin="2"
+                  IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
+                  Content="Zamień wyrażenie z tłumaczeniem"/>
+        <CheckBox IsChecked="{Binding CheckTheSpelling}" 
+                  Margin="2"
+                  IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
+                  Content="Trenuj pisownię"/>
+
+        <TextBlock xml:space="preserve">Inne opcje:</TextBlock>
+        <CheckBox Name="FlashCardsAlgorithm" 
+                  IsChecked="{Binding FlashCardsAlgorithm}" 
+                  Content="{loc:LocText Key=FlashCardsAlgorithm, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" />
+        
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <TextBlock xml:space="preserve">Język: </TextBlock>
+            <ComboBox IsEditable="True" 
+                              IsReadOnly="False" 
+                              MinWidth="150"
+                              Text="{Binding Name}"
+                              SelectedValuePath="Lang"
+                              SelectedValue="{Binding SelectedLanguage}"
+                              ItemsSource="{Binding AvailableLanguages, Mode=OneWay}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <TextBlock xml:space="preserve">Kategoria: </TextBlock>
+            <ComboBox 
+                IsEditable="True"
+                IsReadOnly="False" 
+                MinWidth="150"
+                Text="{Binding SelectedCategory}"
+                ItemsSource="{Binding AvailableCategories, Mode=OneWay}"
+                IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Label xml:space="preserve">Liczba wyrażeń w teście: </Label>
+            <TextBox 
+                Text="{Binding NumberOfExpressionsInTest}" 
+                IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"
+                Width="40"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

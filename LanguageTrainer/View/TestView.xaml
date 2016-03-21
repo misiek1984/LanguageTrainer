@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="LanguageTrainer.View.TestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conv="clr-namespace:MK.UI.WPF.Converters;assembly=MK.UI.WPF"
+             xmlns:loc="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+             mc:Ignorable="d"
+             MinHeight="125" MinWidth="300">
+    <UserControl.Resources>
+        <conv:BooleanToVisibilityConverter x:Key="boolToVis" />
+    </UserControl.Resources>
+
+    <StackPanel>
+        <TextBlock Text="{Binding Title}"></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock xml:space="preserve">Wyrażenie w kategorii: </TextBlock>
+            <TextBlock FontWeight="Bold" Text="{Binding Category, Mode=OneWay}"></TextBlock>
+        </StackPanel>
+        <Border BorderThickness="2" BorderBrush="Black" Margin="5" >
+            <DockPanel>
+                <Button Command="{Binding SpeakCommand}" 
+                        ToolTip="Wysłuchaj"
+                        Visibility="{Binding Path=Config.Reverse, Converter={StaticResource boolToVis}}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="{Binding Path=LanguageInfo.IconSource}"  Width="16" Height="16"></Image>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBox Text="{Binding Expression, UpdateSourceTrigger=LostFocus}"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         FontSize="24" />
+            </DockPanel>
+        </Border>
+        <TextBlock>Tłumaczenie</TextBlock>
+        <Border BorderThickness="2" BorderBrush="Black" Margin="5" >
+            <DockPanel>
+                <Button Command="{Binding SpeakCommand}" 
+                        ToolTip="Wysłuchaj"
+                        Visibility="{Binding Path=Config.Reverse, Converter={StaticResource boolToVis}, ConverterParameter=1}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="{Binding Path=LanguageInfo.IconSource}" Width="16" Height="16"></Image>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <StackPanel Orientation="Vertical">
+                    <TextBox Text="{Binding Translation, UpdateSourceTrigger=LostFocus}" 
+                             FontSize="24" 
+                             AcceptsReturn="True"
+                             TextWrapping="Wrap"
+                             Visibility="{Binding CanShowAnswer, Converter={StaticResource boolToVis}, ConverterParameter=2}" />
+                    <StackPanel Visibility="{Binding CanShowAnswer, Converter={StaticResource boolToVis}, ConverterParameter=2}">
+                        <!--<StackPanel  Visibility="{Binding Path=Config.Reverse, Converter={StaticResource boolToVis}, ConverterParameter=1}">-->
+                        <TextBox MinWidth="40" Text="{Binding Translation2}" FontSize="24" Visibility="{Binding Path=LanguageInfo.UseTranslation2, Converter={StaticResource boolToVis}}"/>
+                        <!--</StackPanel>-->
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <TextBlock Visibility="{Binding Path=Config.CheckTheSpelling, Converter={StaticResource boolToVis}}">Twoja pisownia</TextBlock>
+        <TextBox Text="{Binding SpecialSymbols, Mode=OneWay}"
+                 IsReadOnly="true" 
+                 Margin="5"/>
+        <Border BorderThickness="2" BorderBrush="Black" Margin="5" Visibility="{Binding Path=Config.CheckTheSpelling, Converter={StaticResource boolToVis}}">
+            <TextBox Text="{Binding Spelling, UpdateSourceTrigger=LostFocus}" FontSize="24" />
+        </Border>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding ShowAnswerCommand}" Margin="2" ToolTip="Pokaż odpowiedź">
+                <Image Source="pack://application:,,,/Resources/Icons/ShowAnswer.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding SpeakCommand}" Margin="2" ToolTip="Wysłuchaj">
+                <Image Source="pack://application:,,,/Resources/Icons/Speak.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding GoodAnswerCommand}" Visibility="{Binding ShowEvaluationButtons, Converter={StaticResource boolToVis}}" Margin="2" ToolTip="Dobra odpowiedź">
+                <Image Source="pack://application:,,,/Resources/Icons/Plus.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding BadAnswerCommand}" Visibility="{Binding ShowEvaluationButtons, Converter={StaticResource boolToVis}}" Margin="2" ToolTip="Zła odpowiedź">
+                <Image Source="pack://application:,,,/Resources/Icons/Minus.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding PrevCommand}" Margin="2" ToolTip="Poprzednie">
+                <Image Source="pack://application:,,,/Resources/Icons/Prev.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding NextCommand}" Margin="2" ToolTip="Następne">
+                <Image Source="pack://application:,,,/Resources/Icons/Next.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding ShowAllTranslations}" Margin="2" ToolTip="Pokaż tłumaczenia dla innych języków">
+                <Image Source="pack://application:,,,/Resources/Icons/ShowAnswer.ico" Width="32" Height="32">
+                    <Image.Effect>
+                        <BlurEffect />
+                    </Image.Effect>
+                </Image>
+            </Button>
+        </StackPanel>
+        <Expander Header="{loc:LocText Key=Translation, Dict=Lbl, Assembly=LanguageTrainer.Resources}" IsExpanded="{Binding IsTranslationExpanderExpanded}">
+            <ContentControl Content="{Binding TranslatePanel}"/>
+        </Expander>
+    </StackPanel>
+</UserControl>

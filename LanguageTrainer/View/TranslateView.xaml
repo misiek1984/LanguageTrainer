@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="LanguageTrainer.View.TranslateView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="500">
+    <UserControl.InputBindings>
+        <KeyBinding  Command="{Binding TranslateCommand}" Gesture="Enter"/>
+        <KeyBinding  Command="{Binding SwapLanguagesCommand}" Gesture="Ctrl+S"/>
+    </UserControl.InputBindings>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding TranslateCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Tłumacz">
+                <Image Source="pack://application:,,,/Resources/Icons/Search.ico" Width="32" Height="32"></Image>
+            </Button>
+            <Button Command="{Binding GoToGoogleTranslate}" HorizontalAlignment="Left" Margin="2" ToolTip="Google Translate">
+                <Image Source="pack://application:,,,/Resources/Icons/Google.ico" Width="32" Height="32"></Image>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <TextBlock Text="{loc:LocText Key=From, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+            <ComboBox IsEditable="True" 
+                          IsReadOnly="False" 
+                          MinWidth="150"
+                          SelectedValue="{Binding From}"
+                          SelectedValuePath="Id"
+                          ItemsSource="{Binding AvailableLanguages}"
+                          DisplayMemberPath="Name"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <TextBlock Text="{loc:LocText Key=To, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+            <ComboBox IsEditable="True" 
+                          IsReadOnly="False" 
+                          MinWidth="150"
+                          SelectedValue="{Binding To}"
+                          SelectedValuePath="Id" 
+                          ItemsSource="{Binding AvailableLanguages}"
+                          DisplayMemberPath="Name"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <TextBlock Text="{loc:LocText Key=Expression, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+            <TextBox Text="{Binding ExpressionToTranslate, UpdateSourceTrigger=PropertyChanged}" MinWidth="150" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <TextBlock Text="{loc:LocText Key=Result, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+            <TextBox Text="{Binding TranslationResult}" MinWidth="150" IsReadOnly="True" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

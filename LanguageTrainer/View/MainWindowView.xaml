@@ -1,0 +1,286 @@
+﻿<UserControl x:Class="LanguageTrainer.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:common="clr-namespace:MK.UI.WPF;assembly=MK.UI.WPF"
+        xmlns:commonControls="clr-namespace:MK.UI.WPF.Controls;assembly=MK.UI.WPF"
+        xmlns:paging="clr-namespace:LanguageTrainer.Paging;assembly=LanguageTrainer.Paging"
+        xmlns:controls="clr-namespace:LanguageTrainer.Controls"
+        xmlns:loc="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
+        xmlns:conv="clr-namespace:MK.UI.WPF.Converters;assembly=MK.UI.WPF"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+    <UserControl.Resources>
+        <conv:BooleanToVisibilityConverter x:Key="boolToVis" />
+        <conv:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        <Style  TargetType="{x:Type commonControls:DockPanelSplitter}">
+            <Setter Property="Thickness" Value="6"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type commonControls:DockPanelSplitter}">
+                        <Grid ToolTip="Resize" SnapsToDevicePixels="True" Background="LightGray">
+                            <!-- Grip -->
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <Rectangle Width="2" Height="2" Fill="#5A000000"/>
+                                <Rectangle Width="2" Height="2" Margin="0 2 0 2" Fill="#5A000000"/>
+                                <Rectangle Width="2" Height="2" Fill="#5A000000"/>
+                                <!-- (could also use an image or a drawing) -->
+                            </StackPanel>
+                            <!-- Bevels -->
+                            <Border BorderBrush="#5AFFFFFF" BorderThickness="1,0,0,0"/>
+                            <Border BorderBrush="#5A000000" BorderThickness="0,0,1,0"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <UserControl.InputBindings>
+        <KeyBinding  Command="{Binding SaveCommand}" Gesture="Ctrl+S"/>
+    </UserControl.InputBindings>
+    <DockPanel LastChildFill="True">
+        <DockPanel DockPanel.Dock="Top">
+            <Button Command="{Binding GoToApplicationFolder}" HorizontalAlignment="Left" Margin="2" ToolTip="Katalog domowy">
+                <Image Source="pack://application:,,,/Resources/Icons/Computer.ico" Width="32" Height="32"></Image>
+            </Button>
+            <controls:ThemeChooser HorizontalAlignment="Right" Width="125" Height="20" Margin="2" Visibility="Visible"></controls:ThemeChooser>
+        </DockPanel >
+        <ScrollViewer DockPanel.Dock="Left" VerticalScrollBarVisibility="Auto" Width="275">
+            <Border BorderThickness="2" BorderBrush="Black" Margin="5" Padding="5">
+                <StackPanel Orientation="Vertical">
+                    <Border BorderThickness="1" BorderBrush="Black" Margin="2" Padding="2">
+                        <Expander Header="{loc:LocText Key=Training, Dict=Lbl, Assembly=LanguageTrainer.Resources}" IsExpanded="{Binding IsTrainingExpanderExpanded}">
+                            <ContentControl Content="{Binding TrainingConfiguration}"></ContentControl>
+                        </Expander>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Black" Margin="2" Padding="2">
+                        <Expander Header="{loc:LocText Key=Translation, Dict=Lbl, Assembly=LanguageTrainer.Resources}" IsExpanded="{Binding IsTranslationExpanderExpanded}">
+                            <ContentControl Content="{Binding TranslatePanel}"/>
+                        </Expander>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Black" Margin="2" Padding="2">
+                        <Expander Header="{loc:LocText Key=Configuration, Dict=Lbl, Assembly=LanguageTrainer.Resources}" IsExpanded="{Binding IsConfigurationExpanderExpanded}">
+                            <StackPanel>
+                                <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
+                                    <StackPanel>
+                                        <TextBlock>Pokaż wyrażenia w języku:</TextBlock>
+                                        <ContentControl Content="{Binding Languages}" Margin="2"></ContentControl>
+                                    </StackPanel>
+                                </Border>
+                                <CheckBox IsChecked="{Binding ShowEmptyTranslations}" Content="{loc:LocText Key=ShowEmptyTranslations, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" />
+                                <!--<CheckBox IsChecked="{Binding OnlySelected}" Content="{loc:LocText Key=ShowOnlySelected, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" />-->
+                                <!--<CheckBox IsChecked="{Binding ShowDetails}" Content="{loc:LocText Key=ShowDetails, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" />-->
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Black" Margin="2" Padding="2">
+                        <Expander Header="{loc:LocText Key=ImportExport, Dict=Lbl, Assembly=LanguageTrainer.Resources}" IsExpanded="{Binding IsImportExportExpanderExpanded}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Command="{Binding ImportExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Importuj">
+                                        <Image Source="pack://application:,,,/Resources/Icons/Import.ico" Width="32" Height="32"></Image>
+                                    </Button>
+                                    <Button Command="{Binding ExportExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Eksportuj">
+                                        <Image Source="pack://application:,,,/Resources/Icons/Export.ico" Width="32" Height="32"></Image>
+                                    </Button>
+                                    <Button Command="{Binding CancelCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Anuluj">
+                                        <Image Source="pack://application:,,,/Resources/Icons/Remove.ico" Width="32" Height="32"></Image>
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical">
+                                    <CheckBox Name="ExportSince"
+                                              IsChecked="{Binding ExportSince}" 
+                                              Content="{loc:LocText Key=ExportSince, Dict=Lbl, Assembly=LanguageTrainer.Resources}"
+                                              Margin="2" />
+                                    <xctk:DateTimePicker 
+                                                Margin="2" 
+                                                IsEnabled="{Binding ElementName=ExportSince, Path=IsChecked}"
+                                                Value="{Binding ExportSinceDate}"/>
+                                </StackPanel>
+
+
+                                <CheckBox IsChecked="{Binding SyncWithDropboxEnabled}" 
+                                          Margin="2" 
+                                          Content="{loc:LocText Key=SyncWithDropbox, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+
+                                <CheckBox
+                                    IsChecked="{Binding SyncWithLiveEnabled}" 
+                                    Margin="2" 
+                                    Content="{loc:LocText Key=SyncWithLive, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+
+                                <CheckBox IsChecked="{Binding ImportStatisticsForNew}" Margin="2">Importuj statystyki dla nowych</CheckBox>
+                                <CheckBox IsChecked="{Binding ImportStatisticsForOld}" Margin="2">Importuj statystyki dla istniejących</CheckBox>
+                                <CheckBox IsChecked="{Binding ImportCreationDate}" Margin="2">Importuj datę utworzenia</CheckBox>
+                                <CheckBox IsChecked="{Binding ImportDefinedDate}" Margin="2">Importuj datę utworzenia tłumaczenia</CheckBox>
+                                <CheckBox IsChecked="{Binding ImportRecentlyUsedDate}" Margin="2">Importuj datę ostatniego użycia</CheckBox>
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+        <commonControls:DockPanelSplitter DockPanel.Dock="Left" Thickness="10" />
+        <Border BorderThickness="2" BorderBrush="Black" Margin="5" Padding="5" >
+            <DockPanel LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal" Margin="2">
+                        <TextBlock FontWeight="Bold" Text="Wyrażenia ("></TextBlock>
+                        <TextBlock FontWeight="Bold" 
+                               ToolTip="{Binding NumberOfExpressionsPerLanguage}"
+                               Text="{Binding TotalNumberOfExpressions}">
+                        </TextBlock>
+                        <TextBlock FontWeight="Bold" Text=")"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Command="{Binding AddExpressionCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Nowe wyrażenie">
+                            <Image Source="pack://application:,,,/Resources/Icons/Plus.ico" Width="32" Height="32"></Image>
+                        </Button>
+                        <ContentControl Content="{Binding SearchPanel}"/>
+                    </StackPanel>
+                    <TextBox IsReadOnly="true" Text="{Binding SpecialSymbols, Mode=OneWay}"/>
+                </StackPanel>
+                <paging:PagingControl DockPanel.Dock="Bottom" DataContext="{Binding PagingHelper}"></paging:PagingControl>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer.Resources>
+                        <conv:BooleanToVisibilityConverter x:Key="boolToVis" />
+                    </ScrollViewer.Resources>
+                    <ListView ItemsSource="{Binding Expressions}" 
+                              IsSynchronizedWithCurrentItem="True"
+                              SelectedItem="{Binding SelectedItem, Mode=OneWay}"
+                              Visibility="{Binding ExpressionsVisibility, Mode=OneWay}"
+                              common:GridViewSort.AutoSort="True">
+                        <ListView.InputBindings>
+                            <KeyBinding  Command="{Binding CopyCommand}" Gesture="Ctrl+C"/>
+                            <KeyBinding  Command="{Binding PasteCommand}" Gesture="Ctrl+V"/>
+                        </ListView.InputBindings>
+                        <ListView.Resources>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="IsSelected" Value="{Binding IsSelected,Mode=OneWayToSource}"/>
+                            </Style>
+                        </ListView.Resources>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Akcje">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Command="{Binding RemoveExpression}" ToolTip="Usuń wyrażenie" Margin="2" >
+                                                    <Image Source="pack://application:,,,/Resources/Icons/Remove.ico" Width="16" Height="16"></Image>
+                                                </Button>
+                                                <Button Command="{Binding ManageLanguages}" ToolTip="{loc:LocText Key=ManageLanguages, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" >
+                                                    <Image Source="pack://application:,,,/Resources/Icons/Document.ico" Width="16" Height="16"></Image>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Kategoria" common:GridViewSort.PropertyName="Category">
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <ComboBox IsEditable="True" 
+                                                      IsReadOnly="False" 
+                                                      MinWidth="125"
+                                                      Text="{Binding Category, UpdateSourceTrigger=LostFocus}"
+                                                      ItemsSource="{Binding Path=DataContext.AvailableCategories, RelativeSource={RelativeSource AncestorType=UserControl}, Mode=OneWay, UpdateSourceTrigger=LostFocus}">
+                                            </ComboBox>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Wyrażenie" common:GridViewSort.PropertyName="Expression">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox 
+                                                Text="{Binding Expression, ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus}" 
+                                                AcceptsReturn="True"
+                                                TextWrapping="Wrap"
+                                                MinWidth="125"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Tłumaczenie">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl ItemsSource="{Binding Translations}" MinWidth="125">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <CheckBox IsChecked="{Binding IsSelected}" Visibility="{Binding TranslationVisibility}"></CheckBox>
+                                                            <ContentControl Content="{Binding}" Visibility="{Binding TranslationVisibility}"/>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="{loc:LocText Key=Statistics, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl ItemsSource="{Binding Translations}" Focusable="False">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate >
+                                                        <StackPanel Orientation="Vertical" Visibility="{Binding TranslationVisibility}">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding Statistic, Mode=OneWay}" 
+                                                                   Margin="0,0,2,0"/>
+                                                                <CheckBox IsChecked="{Binding WasLastAnswerGood, Mode=OneWay}" 
+                                                                      IsEnabled="False"/>
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding ReverseStatistic, Mode=OneWay}" 
+                                                                   Margin="0,0,2,0"/>
+                                                                <CheckBox IsChecked="{Binding ReverseWasLastAnswerGood, Mode=OneWay}" 
+                                                                      IsEnabled="False"/>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="{loc:LocText Key=SpellingStatistics, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl ItemsSource="{Binding Translations}"  Focusable="False">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Vertical" Visibility="{Binding TranslationVisibility}">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding SpellingStatistic, Mode=OneWay}" 
+                                                                       Margin="0,0,2,0"/>
+                                                                <CheckBox IsChecked="{Binding SpellingWasLastAnswerGood, Mode=OneWay}" 
+                                                                          IsEnabled="False"/>
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding ReverseSpellingStatistic, Mode=OneWay}" 
+                                                                   Margin="0,0,2,0"/>
+                                                                <CheckBox IsChecked="{Binding ReverseSpellingWasLastAnswerGood, Mode=OneWay}" 
+                                                                      IsEnabled="False"/>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="{loc:LocText Key=RecentlyUsed, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl ItemsSource="{Binding Translations}"  Focusable="False">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding RecentlyUsed, Mode=OneWay}" Visibility="{Binding TranslationVisibility}" MinWidth="125"/>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+    </DockPanel>
+</UserControl>
