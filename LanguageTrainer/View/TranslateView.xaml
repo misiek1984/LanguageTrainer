@@ -16,7 +16,7 @@
                 <Image Source="pack://application:,,,/Resources/Icons/Search.ico" Width="32" Height="32"></Image>
             </Button>
             <Button Command="{Binding GoToGoogleTranslate}" HorizontalAlignment="Left" Margin="2" ToolTip="Google Translate">
-                <Image Source="pack://application:,,,/Resources/Icons/Google.ico" Width="32" Height="32"></Image>
+                <Image Source="pack://application:,,,/Resources/Icons/Translate.ico" Width="32" Height="32"></Image>
             </Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="2">

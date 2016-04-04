@@ -87,10 +87,7 @@
                 <Image Source="pack://application:,,,/Resources/Icons/Next.ico" Width="32" Height="32"></Image>
             </Button>
             <Button Command="{Binding ShowAllTranslations}" Margin="2" ToolTip="Pokaż tłumaczenia dla innych języków">
-                <Image Source="pack://application:,,,/Resources/Icons/ShowAnswer.ico" Width="32" Height="32">
-                    <Image.Effect>
-                        <BlurEffect />
-                    </Image.Effect>
+                <Image Source="pack://application:,,,/Resources/Icons/ShowTranslations.ico" Width="32" Height="32">
                 </Image>
             </Button>
         </StackPanel>

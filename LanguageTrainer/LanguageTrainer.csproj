@@ -333,6 +333,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Resources\Icons\ICON-LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -393,13 +394,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Icons\Backward.ico" />
-    <Resource Include="Resources\Icons\BurnFolder.ico" />
     <Resource Include="Resources\Icons\Computer.ico" />
     <Resource Include="Resources\Icons\Document.ico" />
     <Resource Include="Resources\Icons\Export.ico" />
     <Resource Include="Resources\Icons\Forward.ico" />
     <Resource Include="Resources\Icons\Globe Connected.ico" />
-    <Resource Include="Resources\Icons\Google.ico" />
     <Resource Include="Resources\Icons\Import.ico" />
     <Resource Include="Resources\Icons\Minus.ico" />
     <Resource Include="Resources\Icons\Next.ico" />
@@ -408,11 +407,16 @@
     <Resource Include="Resources\Icons\Remove.ico" />
     <Resource Include="Resources\Icons\Search.ico" />
     <Resource Include="Resources\Icons\ShowAnswer.ico" />
+    <Resource Include="Resources\Icons\ShowTranslations.ico" />
     <Resource Include="Resources\Icons\Speak.ico" />
-    <Resource Include="Resources\Icons\Start.ico" />
     <Resource Include="Resources\Icons\Start2.ico" />
-    <Resource Include="Resources\Icons\Validate.ico" />
-    <Resource Include="Resources\Icons\Warning.ico" />
+    <Resource Include="Resources\Icons\Translate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Start.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
