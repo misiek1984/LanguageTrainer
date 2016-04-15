@@ -339,4 +339,16 @@
   <data name="Resize" xml:space="preserve">
     <value>Resize</value>
   </data>
+  <data name="FirstPage" xml:space="preserve">
+    <value>First page</value>
+  </data>
+  <data name="LastPage" xml:space="preserve">
+    <value>Last page</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>Next page</value>
+  </data>
+  <data name="PrevPage" xml:space="preserve">
+    <value>Prev page</value>
+  </data>
 </root>

@@ -241,6 +241,15 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to First page.
+        /// </summary>
+        public static string FirstPage {
+            get {
+                return ResourceManager.GetString("FirstPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FlashCards Algorithm.
         /// </summary>
         public static string FlashCardsAlgorithm {
@@ -385,6 +394,15 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last page.
+        /// </summary>
+        public static string LastPage {
+            get {
+                return ResourceManager.GetString("LastPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listen.
         /// </summary>
         public static string Listen {
@@ -448,6 +466,15 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next page.
+        /// </summary>
+        public static string NextPage {
+            get {
+                return ResourceManager.GetString("NextPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of words in test: .
         /// </summary>
         public static string NumberOfWordsInTest {
@@ -480,6 +507,15 @@ namespace LanguageTrainer.Resources {
         public static string Prev {
             get {
                 return ResourceManager.GetString("Prev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prev page.
+        /// </summary>
+        public static string PrevPage {
+            get {
+                return ResourceManager.GetString("PrevPage", resourceCulture);
             }
         }
         

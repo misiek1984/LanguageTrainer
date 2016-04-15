@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:WPFLocalizeExtension.Extensions;assembly=WPFLocalizeExtension"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
@@ -38,16 +39,16 @@
             </TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button Command="{Binding FirstPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Pierwsza strona">
+            <Button Command="{Binding FirstPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=FirstPage, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Backward.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding PrevPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Poprzednia strona">
+            <Button Command="{Binding PrevPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=PrevPage, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Prev.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding NextPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Następna strona">
+            <Button Command="{Binding NextPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=NextPage, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Next.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding LastPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Ostatnia strona">
+            <Button Command="{Binding LastPageCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=LastPage, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Forward.ico" Width="32" Height="32"></Image>
             </Button>
         </StackPanel>
