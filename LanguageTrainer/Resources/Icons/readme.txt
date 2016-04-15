@@ -1,0 +1,1 @@
+These icons have been downloaded from: https://github.com/iconic/open-iconic
