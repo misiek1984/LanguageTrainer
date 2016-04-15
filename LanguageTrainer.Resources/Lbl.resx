@@ -118,87 +118,225 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="All" xml:space="preserve">
-    <value>&lt;Wszystkie&gt;</value>
+    <value>&lt;All&gt;</value>
   </data>
   <data name="ChooseOnlySelected" xml:space="preserve">
-    <value>Losuj spośród zaznaczonych</value>
+    <value>Use only from selected</value>
   </data>
   <data name="Configuration" xml:space="preserve">
-    <value>Ustawienia różne</value>
+    <value>Configuration</value>
   </data>
   <data name="DropboxLogin" xml:space="preserve">
-    <value>Logowanie do Dropbox'a</value>
+    <value>Logging to Dropbox</value>
   </data>
   <data name="ExportSince" xml:space="preserve">
-    <value>Eksportuj od: </value>
+    <value>Export since:</value>
   </data>
   <data name="Expression" xml:space="preserve">
-    <value>Wyrażenie: </value>
+    <value>Expression:</value>
   </data>
   <data name="FlashCardsAlgorithm" xml:space="preserve">
-    <value>Algorytm fiszkowy</value>
+    <value>FlashCards Algorithm</value>
   </data>
   <data name="From" xml:space="preserve">
-    <value>Z: </value>
+    <value>From:</value>
   </data>
   <data name="ImportExport" xml:space="preserve">
-    <value>Import/Eksport</value>
+    <value>Import/Export</value>
   </data>
   <data name="LanguageTrainer" xml:space="preserve">
     <value>LanguageTrainer</value>
   </data>
   <data name="LastAnswer" xml:space="preserve">
-    <value>Ostatnia odpowiedź</value>
+    <value>Last answer</value>
   </data>
   <data name="ManageLanguages" xml:space="preserve">
-    <value>Zarządzaj językami</value>
+    <value>Manage languages</value>
   </data>
   <data name="LiveLogin" xml:space="preserve">
-    <value>Logowanie do Windows Live</value>
+    <value>Logging to Windows Live</value>
   </data>
   <data name="OneNotePath" xml:space="preserve">
-    <value>Notatnik\Sekcja\Strona: </value>
+    <value>Notebook\Section\Page:</value>
   </data>
   <data name="RecentlyUsed" xml:space="preserve">
-    <value>Ostatnio użyte</value>
+    <value>Recently used</value>
   </data>
   <data name="Result" xml:space="preserve">
-    <value>Wynik: </value>
+    <value>Result:</value>
   </data>
   <data name="ShowDetails" xml:space="preserve">
-    <value>Pokazuj szczegóły</value>
+    <value>Show details</value>
   </data>
   <data name="ShowEmptyTranslations" xml:space="preserve">
-    <value>Pokaż puste tłumaczenia</value>
+    <value>Show empty translations</value>
   </data>
   <data name="ShowOnlySelected" xml:space="preserve">
-    <value>Pokaż tylko zaznaczone</value>
+    <value>Show only selected</value>
   </data>
   <data name="SpellingStatistics" xml:space="preserve">
-    <value>Statystyka (pisownia)</value>
+    <value>Spelling statistics</value>
   </data>
   <data name="Statistics" xml:space="preserve">
-    <value>Statystyka </value>
+    <value>Statistics</value>
   </data>
   <data name="SyncWithDropbox" xml:space="preserve">
-    <value>Synchronizuj z usługą Dropbox</value>
+    <value>Synchronize with Dropbox</value>
   </data>
   <data name="SyncWithLive" xml:space="preserve">
-    <value>Synchronizuj z Windows Live</value>
+    <value>Synchronize with Windows Live</value>
   </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
   </data>
   <data name="To" xml:space="preserve">
-    <value>Do: </value>
+    <value>To:</value>
   </data>
   <data name="Training" xml:space="preserve">
-    <value>Ustawienia treningu</value>
+    <value>Training</value>
   </data>
   <data name="Translation" xml:space="preserve">
-    <value>Tłumaczenie</value>
+    <value>Translation</value>
   </data>
   <data name="UseRecentlyUsed" xml:space="preserve">
-    <value>Uwzględnij już użyte</value>
+    <value>Use recently used</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="AdditionalFilteringOptions" xml:space="preserve">
+    <value>Additional filtering options: </value>
+  </data>
+  <data name="All2" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AllWithoutNew" xml:space="preserve">
+    <value>All without new</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category: </value>
+  </data>
+  <data name="CorrectAnswer" xml:space="preserve">
+    <value>Correct answer</value>
+  </data>
+  <data name="CreatedSince" xml:space="preserve">
+    <value>Created since: </value>
+  </data>
+  <data name="ExpressionColumn" xml:space="preserve">
+    <value>Expression</value>
+  </data>
+  <data name="Expressions" xml:space="preserve">
+    <value>Expressions</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="GoogleTranslate" xml:space="preserve">
+    <value>Google Translate</value>
+  </data>
+  <data name="ImportCreationDate" xml:space="preserve">
+    <value>Import creation date</value>
+  </data>
+  <data name="ImportDefinedDate" xml:space="preserve">
+    <value>Import translation creation date</value>
+  </data>
+  <data name="ImportRecentlyUsedDate" xml:space="preserve">
+    <value>Import recently used date</value>
+  </data>
+  <data name="ImportStatisticsForNew" xml:space="preserve">
+    <value>Import statistics for new</value>
+  </data>
+  <data name="ImportStatisticsForOld" xml:space="preserve">
+    <value>Import statistics for old</value>
+  </data>
+  <data name="IncludeFollowingExpressions" xml:space="preserve">
+    <value>Include the following expressions: </value>
+  </data>
+  <data name="InorrectAnswer" xml:space="preserve">
+    <value>Inorrect answer</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language: </value>
+  </data>
+  <data name="Listen" xml:space="preserve">
+    <value>Listen</value>
+  </data>
+  <data name="MatchWholeWords" xml:space="preserve">
+    <value>Match whole words</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="NewExpressions" xml:space="preserve">
+    <value>New expressions</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NumberOfWordsInTest" xml:space="preserve">
+    <value>Number of words in test: </value>
+  </data>
+  <data name="OtherOptions" xml:space="preserve">
+    <value>Other options: </value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ReverseExpressionsWithTranslations" xml:space="preserve">
+    <value>Reverse expressions with translations</value>
+  </data>
+  <data name="ShowAllTranslations" xml:space="preserve">
+    <value>Show all translations</value>
+  </data>
+  <data name="ShowAnswer" xml:space="preserve">
+    <value>Show answer</value>
+  </data>
+  <data name="ShowTranslationsInLanguages" xml:space="preserve">
+    <value>Show the following languages:</value>
+  </data>
+  <data name="StartTraining" xml:space="preserve">
+    <value>Start training</value>
+  </data>
+  <data name="StartTrainingWithoutEvaluation" xml:space="preserve">
+    <value>Start training without evaluation</value>
+  </data>
+  <data name="TrainingOptions" xml:space="preserve">
+    <value>Training options: </value>
+  </data>
+  <data name="TrainSpelling" xml:space="preserve">
+    <value>Train spelling</value>
+  </data>
+  <data name="Translate" xml:space="preserve">
+    <value>Translate</value>
+  </data>
+  <data name="TranslationColumn" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <data name="WithLastIncorrectAnswer" xml:space="preserve">
+    <value>With last incorrect answer</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CreatedFrom" xml:space="preserve">
+    <value>Created from:</value>
+  </data>
+  <data name="CreatedTo" xml:space="preserve">
+    <value>Created to:</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Resize" xml:space="preserve">
+    <value>Resize</value>
   </data>
 </root>

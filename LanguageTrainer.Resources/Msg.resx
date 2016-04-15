@@ -118,39 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CannotAuthorise" xml:space="preserve">
-    <value>Autoryzacja nie powiodła się.</value>
+    <value>Authentication failed.</value>
   </data>
   <data name="CannotAuthorise2" xml:space="preserve">
-    <value>Autoryzacja nie powiodła się z powodu błędu: {0}.</value>
+    <value>Authentication failed because of the following error: {0}.</value>
   </data>
   <data name="CannotLoadSettings" xml:space="preserve">
-    <value>Nie udało się wczytać ustawień programu.</value>
+    <value>Cannot load settings.</value>
   </data>
   <data name="CannotSyncFromTwoSourcesAtTheSameTime" xml:space="preserve">
-    <value>Cannot synchronize with more than 1 source at the same time!</value>
+    <value>Cannot synchronize with more than 1 source at the same time.</value>
   </data>
   <data name="DropboxExportFailed" xml:space="preserve">
-    <value>Eksport do usługi Dropbox nie powiódł się!</value>
+    <value>Export to Dropbox failed.</value>
   </data>
   <data name="ImportFailed" xml:space="preserve">
-    <value>Import nie powiódł się!</value>
+    <value>Import failed.</value>
   </data>
   <data name="LiveExportFailed" xml:space="preserve">
-    <value>Eksport do usługi Live nie powiódł się!</value>
+    <value>Export to Live failed.</value>
   </data>
   <data name="Loading" xml:space="preserve">
-    <value>Ładowanie...</value>
+    <value>Loading...</value>
   </data>
   <data name="NoExpressionsFound" xml:space="preserve">
-    <value>Nie znaleziono żadnych wyrażen zgodnych z podanymi kryteriami.</value>
+    <value>No expressions were found.</value>
   </data>
   <data name="NotUnique" xml:space="preserve">
-    <value>Podana wartość jest już w słowniku</value>
+    <value>A given value is not unique.</value>
   </data>
   <data name="SearchHasEnded" xml:space="preserve">
-    <value>Wyszukiwanie zostało zakończone.</value>
+    <value>The search has been completed.</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Odpowiedziałeś dobrze na {0} i źle na {1} spośród {2} pytań.</value>
+    <value>You responded correctly to {0} and incorrectly to {1} of {2} questions.</value>
   </data>
 </root>

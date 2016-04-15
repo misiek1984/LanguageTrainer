@@ -10,15 +10,15 @@
         <KeyBinding  Command="{Binding FindExpressionsCommand}" Gesture="Enter"/>
     </UserControl.InputBindings>
     <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding FindExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Znajdź">
+        <Button Command="{Binding FindExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=Find, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
             <Image Source="pack://application:,,,/Resources/Icons/Search.ico" Width="32" Height="32"></Image>
         </Button>
         <StackPanel Margin="2">
             <TextBox Text="{Binding TextToFind, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
-            <CheckBox IsChecked="{Binding MatchWholeWord}">Szukaj całych słów</CheckBox>
+            <CheckBox IsChecked="{Binding MatchWholeWord}" Content="{loc:LocText Key=MatchWholeWords, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="2">
-            <TextBlock xml:space="preserve">Kategoria:  </TextBlock>
+            <TextBlock xml:space="preserve" Text="{loc:LocText Key=Category, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <ComboBox IsEditable="True" 
                               IsReadOnly="False" 
                               MinWidth="150"

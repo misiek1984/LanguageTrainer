@@ -14,13 +14,13 @@
     <StackPanel>
         <TextBlock Text="{Binding Title}"></TextBlock>
         <StackPanel Orientation="Horizontal">
-            <TextBlock xml:space="preserve">Wyrażenie w kategorii: </TextBlock>
+            <TextBlock xml:space="preserve" Text="{loc:LocText Key=Category, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <TextBlock FontWeight="Bold" Text="{Binding Category, Mode=OneWay}"></TextBlock>
         </StackPanel>
         <Border BorderThickness="2" BorderBrush="Black" Margin="5" >
             <DockPanel>
                 <Button Command="{Binding SpeakCommand}" 
-                        ToolTip="Wysłuchaj"
+                        ToolTip="{loc:LocText Key=Listen, Dict=Lbl, Assembly=LanguageTrainer.Resources}"
                         Visibility="{Binding Path=Config.Reverse, Converter={StaticResource boolToVis}}">
                     <Button.Template>
                         <ControlTemplate>
@@ -34,11 +34,11 @@
                          FontSize="24" />
             </DockPanel>
         </Border>
-        <TextBlock>Tłumaczenie</TextBlock>
+        <TextBlock Text="{loc:LocText Key=Translation, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
         <Border BorderThickness="2" BorderBrush="Black" Margin="5" >
             <DockPanel>
                 <Button Command="{Binding SpeakCommand}" 
-                        ToolTip="Wysłuchaj"
+                        ToolTip="{loc:LocText Key=Listen, Dict=Lbl, Assembly=LanguageTrainer.Resources}"
                         Visibility="{Binding Path=Config.Reverse, Converter={StaticResource boolToVis}, ConverterParameter=1}">
                     <Button.Template>
                         <ControlTemplate>
@@ -68,25 +68,25 @@
             <TextBox Text="{Binding Spelling, UpdateSourceTrigger=LostFocus}" FontSize="24" />
         </Border>
         <StackPanel Orientation="Horizontal">
-            <Button Command="{Binding ShowAnswerCommand}" Margin="2" ToolTip="Pokaż odpowiedź">
+            <Button Command="{Binding ShowAnswerCommand}" Margin="2" ToolTip="{loc:LocText Key=ShowAnswer, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/ShowAnswer.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding SpeakCommand}" Margin="2" ToolTip="Wysłuchaj">
+            <Button Command="{Binding SpeakCommand}" Margin="2" ToolTip="{loc:LocText Key=Listen, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Speak.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding GoodAnswerCommand}" Visibility="{Binding ShowEvaluationButtons, Converter={StaticResource boolToVis}}" Margin="2" ToolTip="Dobra odpowiedź">
+            <Button Command="{Binding GoodAnswerCommand}" Visibility="{Binding ShowEvaluationButtons, Converter={StaticResource boolToVis}}" Margin="2" ToolTip="{loc:LocText Key=CorrectAnswer, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Plus.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding BadAnswerCommand}" Visibility="{Binding ShowEvaluationButtons, Converter={StaticResource boolToVis}}" Margin="2" ToolTip="Zła odpowiedź">
+            <Button Command="{Binding BadAnswerCommand}" Visibility="{Binding ShowEvaluationButtons, Converter={StaticResource boolToVis}}" Margin="2" ToolTip="{loc:LocText Key=InorrectAnswer, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Minus.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding PrevCommand}" Margin="2" ToolTip="Poprzednie">
+            <Button Command="{Binding PrevCommand}" Margin="2" ToolTip="{loc:LocText Key=Prev, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Prev.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding NextCommand}" Margin="2" ToolTip="Następne">
+            <Button Command="{Binding NextCommand}" Margin="2" ToolTip="{loc:LocText Key=Next, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Next.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding ShowAllTranslations}" Margin="2" ToolTip="Pokaż tłumaczenia dla innych języków">
+            <Button Command="{Binding ShowAllTranslations}" Margin="2" ToolTip="{loc:LocText Key=ShowAllTranslations, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/ShowTranslations.ico" Width="32" Height="32">
                 </Image>
             </Button>

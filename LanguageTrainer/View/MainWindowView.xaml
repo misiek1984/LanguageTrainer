@@ -16,7 +16,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type commonControls:DockPanelSplitter}">
-                        <Grid ToolTip="Resize" SnapsToDevicePixels="True" Background="LightGray">
+                        <Grid ToolTip="{loc:LocText Key=Resize, Dict=Lbl, Assembly=LanguageTrainer.Resources}" SnapsToDevicePixels="True" Background="LightGray">
                             <!-- Grip -->
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                                 <Rectangle Width="2" Height="2" Fill="#5A000000"/>
@@ -38,7 +38,7 @@
     </UserControl.InputBindings>
     <DockPanel LastChildFill="True">
         <DockPanel DockPanel.Dock="Top">
-            <Button Command="{Binding GoToApplicationFolder}" HorizontalAlignment="Left" Margin="2" ToolTip="Katalog domowy">
+            <Button Command="{Binding GoToApplicationFolder}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=Home, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Computer.ico" Width="32" Height="32"></Image>
             </Button>
             <controls:ThemeChooser HorizontalAlignment="Right" Width="125" Height="20" Margin="2" Visibility="Visible"></controls:ThemeChooser>
@@ -61,7 +61,7 @@
                             <StackPanel>
                                 <Border BorderThickness="1" BorderBrush="Black" Margin="5" Padding="5">
                                     <StackPanel>
-                                        <TextBlock>Pokaż wyrażenia w języku:</TextBlock>
+                                        <TextBlock Text="{loc:LocText Key=ShowTranslationsInLanguages, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
                                         <ContentControl Content="{Binding Languages}" Margin="2"></ContentControl>
                                     </StackPanel>
                                 </Border>
@@ -75,13 +75,13 @@
                         <Expander Header="{loc:LocText Key=ImportExport, Dict=Lbl, Assembly=LanguageTrainer.Resources}" IsExpanded="{Binding IsImportExportExpanderExpanded}">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Command="{Binding ImportExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Importuj">
+                                    <Button Command="{Binding ImportExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=Import, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                                         <Image Source="pack://application:,,,/Resources/Icons/Import.ico" Width="32" Height="32"></Image>
                                     </Button>
-                                    <Button Command="{Binding ExportExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Eksportuj">
+                                    <Button Command="{Binding ExportExpressionsCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=Export, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                                         <Image Source="pack://application:,,,/Resources/Icons/Export.ico" Width="32" Height="32"></Image>
                                     </Button>
-                                    <Button Command="{Binding CancelCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Anuluj">
+                                    <Button Command="{Binding CancelCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=Cancel, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                                         <Image Source="pack://application:,,,/Resources/Icons/Remove.ico" Width="32" Height="32"></Image>
                                     </Button>
                                 </StackPanel>
@@ -106,11 +106,11 @@
                                     Margin="2" 
                                     Content="{loc:LocText Key=SyncWithLive, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
 
-                                <CheckBox IsChecked="{Binding ImportStatisticsForNew}" Margin="2">Importuj statystyki dla nowych</CheckBox>
-                                <CheckBox IsChecked="{Binding ImportStatisticsForOld}" Margin="2">Importuj statystyki dla istniejących</CheckBox>
-                                <CheckBox IsChecked="{Binding ImportCreationDate}" Margin="2">Importuj datę utworzenia</CheckBox>
-                                <CheckBox IsChecked="{Binding ImportDefinedDate}" Margin="2">Importuj datę utworzenia tłumaczenia</CheckBox>
-                                <CheckBox IsChecked="{Binding ImportRecentlyUsedDate}" Margin="2">Importuj datę ostatniego użycia</CheckBox>
+                                <CheckBox IsChecked="{Binding ImportStatisticsForNew}" Margin="2" Content="{loc:LocText Key=ImportStatisticsForNew, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+                                <CheckBox IsChecked="{Binding ImportStatisticsForOld}" Margin="2" Content="{loc:LocText Key=ImportStatisticsForOld, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+                                <CheckBox IsChecked="{Binding ImportCreationDate}" Margin="2"     Content="{loc:LocText Key=ImportCreationDate, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+                                <CheckBox IsChecked="{Binding ImportDefinedDate}" Margin="2"      Content="{loc:LocText Key=ImportDefinedDate, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+                                <CheckBox IsChecked="{Binding ImportRecentlyUsedDate}" Margin="2" Content="{loc:LocText Key=ImportRecentlyUsedDate, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
                             </StackPanel>
                         </Expander>
                     </Border>
@@ -122,15 +122,16 @@
             <DockPanel LastChildFill="True">
                 <StackPanel DockPanel.Dock="Top">
                     <StackPanel Orientation="Horizontal" Margin="2">
-                        <TextBlock FontWeight="Bold" Text="Wyrażenia ("></TextBlock>
+                        <TextBlock FontWeight="Bold" Text="{loc:LocText Key=Expressions, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
+                        <TextBlock FontWeight="Bold" Text="(" />
                         <TextBlock FontWeight="Bold" 
                                ToolTip="{Binding NumberOfExpressionsPerLanguage}"
                                Text="{Binding TotalNumberOfExpressions}">
                         </TextBlock>
-                        <TextBlock FontWeight="Bold" Text=")"></TextBlock>
+                        <TextBlock FontWeight="Bold" Text=")" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Button Command="{Binding AddExpressionCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Nowe wyrażenie">
+                        <Button Command="{Binding AddExpressionCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=NewExpressions, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                             <Image Source="pack://application:,,,/Resources/Icons/Plus.ico" Width="32" Height="32"></Image>
                         </Button>
                         <ContentControl Content="{Binding SearchPanel}"/>
@@ -158,11 +159,11 @@
                         </ListView.Resources>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Akcje">
+                                <GridViewColumn Header="{loc:LocText Key=Actions, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button Command="{Binding RemoveExpression}" ToolTip="Usuń wyrażenie" Margin="2" >
+                                                <Button Command="{Binding RemoveExpression}" ToolTip="{loc:LocText Key=Remove, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" >
                                                     <Image Source="pack://application:,,,/Resources/Icons/Remove.ico" Width="16" Height="16"></Image>
                                                 </Button>
                                                 <Button Command="{Binding ManageLanguages}" ToolTip="{loc:LocText Key=ManageLanguages, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" >
@@ -172,7 +173,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Kategoria" common:GridViewSort.PropertyName="Category">
+                                <GridViewColumn Header="{loc:LocText Key=Category, Dict=Lbl, Assembly=LanguageTrainer.Resources}" common:GridViewSort.PropertyName="Category">
                                     <GridViewColumn.CellTemplate >
                                         <DataTemplate>
                                             <ComboBox IsEditable="True" 
@@ -184,7 +185,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Wyrażenie" common:GridViewSort.PropertyName="Expression">
+                                <GridViewColumn Header="{loc:LocText Key=ExpressionColumn, Dict=Lbl, Assembly=LanguageTrainer.Resources}" common:GridViewSort.PropertyName="Expression">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <TextBox 
@@ -195,7 +196,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Tłumaczenie">
+                                <GridViewColumn Header="{loc:LocText Key=TranslationColumn, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <ItemsControl ItemsSource="{Binding Translations}" MinWidth="125">

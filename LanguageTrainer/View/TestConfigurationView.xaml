@@ -16,41 +16,41 @@
             <Button Command="{Binding StartTrainingCommand}" 
                     HorizontalAlignment="Left" 
                     Margin="2" 
-                    ToolTip="Rozpocznij test z ocenianiem odpowiedzi">
+                    ToolTip="{loc:LocText Key=StartTraining, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Start.ico" Width="32" Height="32"></Image>
             </Button>
             <Button Command="{Binding StartTrainingCommandWithoutEvaluation}" 
                     HorizontalAlignment="Left" 
                     Margin="2" 
-                    ToolTip="Rozpocznij test bez oceniania odpowiedzi"
+                    ToolTip="{loc:LocText Key=StartTrainingWithoutEvaluation, Dict=Lbl, Assembly=LanguageTrainer.Resources}"
                     IsEnabled="{Binding ElementName=FlashCardsAlgorithm, Path=IsChecked, Converter={StaticResource ResourceKey=InverseBooleanConverter}}">
                 <Image Source="pack://application:,,,/Resources/Icons/Start2.ico" Width="32" Height="32"></Image>
             </Button>
         </StackPanel>
 
-        <TextBlock xml:space="preserve">Wybierz wyrażenia:</TextBlock>
+        <TextBlock xml:space="preserve" Text="{loc:LocText Key=IncludeFollowingExpressions, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
         <RadioButton IsChecked="{Binding AllExpressions}" 
                      GroupName="Config" 
                      Margin="2"
                      IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
-                     Content="Wszystkie"/>
+                     Content="{loc:LocText Key=All2, Dict=Lbl, Assembly=LanguageTrainer.Resources}"/>
         <RadioButton IsChecked="{Binding AllExpressionsWithoutNew}" 
                      GroupName="Config" 
                      Margin="2"
                      IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
-                     Content="Wszystkie bez nowych"/>
+                     Content="{loc:LocText Key=AllWithoutNew, Dict=Lbl, Assembly=LanguageTrainer.Resources}"/>
         <RadioButton IsChecked="{Binding OnlyNewExpressions}" 
                      GroupName="Config" 
                      Margin="2"
                      IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"
-                     Content="Nowe wyrażenia"/>
+                     Content="{loc:LocText Key=New, Dict=Lbl, Assembly=LanguageTrainer.Resources}"/>
         <RadioButton IsChecked="{Binding ExpressionsWithLastWrongAnswer}" 
                      GroupName="Config" 
                      Margin="2"
                      IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"
-                     Content="Ostatnio źle odpowiedziane"/>
+                     Content="{loc:LocText Key=WithLastIncorrectAnswer, Dict=Lbl, Assembly=LanguageTrainer.Resources}"/>
 
-        <TextBlock xml:space="preserve">Dodatkowe opcje filtrowania:</TextBlock>
+        <TextBlock xml:space="preserve" Text="{loc:LocText Key=AdditionalFilteringOptions, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
         <CheckBox IsChecked="{Binding OnlySelected}" 
                   Content="{loc:LocText Key=ChooseOnlySelected, Dict=Lbl, Assembly=LanguageTrainer.Resources}" 
                   Margin="2" 
@@ -61,36 +61,37 @@
                   IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"/>
 
         <StackPanel Orientation="Vertical">
-            <TextBlock xml:space="preserve">Utworzone od do:</TextBlock>
+            <TextBlock xml:space="preserve" Text="{loc:LocText Key=CreatedFrom, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <xctk:DateTimePicker 
                 Margin="2"
                 HorizontalAlignment="Left"
                 Width="225"
                 Value="{Binding CreatedFromDate}"/>
+            <TextBlock xml:space="preserve" Text="{loc:LocText Key=CreatedTo, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <xctk:DateTimePicker 
                 Margin="2" 
                 HorizontalAlignment="Left"
                 Width="225"
                 Value="{Binding CreatedToDate}"/>
          </StackPanel>
-        
-        <TextBlock xml:space="preserve">Co chcesz ćwiczyć:</TextBlock>
+
+        <TextBlock xml:space="preserve" Text="{loc:LocText Key=TrainingOptions, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
         <CheckBox IsChecked="{Binding Reverse}" 
                   Margin="2"
                   IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
-                  Content="Zamień wyrażenie z tłumaczeniem"/>
+                  Content="{loc:LocText Key=ReverseExpressionsWithTranslations, Dict=Lbl, Assembly=LanguageTrainer.Resources}"/>
         <CheckBox IsChecked="{Binding CheckTheSpelling}" 
                   Margin="2"
                   IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}" 
-                  Content="Trenuj pisownię"/>
+                  Content="{loc:LocText Key=TrainSpelling, Dict=Lbl, Assembly=LanguageTrainer.Resources}"/>
 
-        <TextBlock xml:space="preserve">Inne opcje:</TextBlock>
+        <TextBlock xml:space="preserve" Text="{loc:LocText Key=OtherOptions, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
         <CheckBox Name="FlashCardsAlgorithm" 
                   IsChecked="{Binding FlashCardsAlgorithm}" 
                   Content="{loc:LocText Key=FlashCardsAlgorithm, Dict=Lbl, Assembly=LanguageTrainer.Resources}" Margin="2" />
         
         <StackPanel Orientation="Horizontal" Margin="2">
-            <TextBlock xml:space="preserve">Język: </TextBlock>
+            <TextBlock xml:space="preserve" Text="{loc:LocText Key=Language, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <ComboBox IsEditable="True" 
                               IsReadOnly="False" 
                               MinWidth="150"
@@ -100,7 +101,7 @@
                               ItemsSource="{Binding AvailableLanguages, Mode=OneWay}" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="2">
-            <TextBlock xml:space="preserve">Kategoria: </TextBlock>
+            <TextBlock xml:space="preserve" Text="{loc:LocText Key=Category, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <ComboBox 
                 IsEditable="True"
                 IsReadOnly="False" 
@@ -110,7 +111,7 @@
                 IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="2">
-            <Label xml:space="preserve">Liczba wyrażeń w teście: </Label>
+            <Label xml:space="preserve" Content="{loc:LocText Key=NumberOfWordsInTest, Dict=Lbl, Assembly=LanguageTrainer.Resources}" />
             <TextBox 
                 Text="{Binding NumberOfExpressionsInTest}" 
                 IsEnabled="{Binding FlashCardsAlgorithm, Converter={StaticResource ResourceKey=InverseBooleanConverter}}"

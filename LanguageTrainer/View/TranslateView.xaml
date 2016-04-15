@@ -12,10 +12,10 @@
     </UserControl.InputBindings>
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
-            <Button Command="{Binding TranslateCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="Tłumacz">
+            <Button Command="{Binding TranslateCommand}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=Translate, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Search.ico" Width="32" Height="32"></Image>
             </Button>
-            <Button Command="{Binding GoToGoogleTranslate}" HorizontalAlignment="Left" Margin="2" ToolTip="Google Translate">
+            <Button Command="{Binding GoToGoogleTranslate}" HorizontalAlignment="Left" Margin="2" ToolTip="{loc:LocText Key=GoogleTranslate, Dict=Lbl, Assembly=LanguageTrainer.Resources}">
                 <Image Source="pack://application:,,,/Resources/Icons/Translate.ico" Width="32" Height="32"></Image>
             </Button>
         </StackPanel>

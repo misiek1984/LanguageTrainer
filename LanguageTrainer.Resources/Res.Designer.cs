@@ -70,7 +70,7 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chiński.
+        ///   Looks up a localized string similar to Chinese.
         /// </summary>
         public static string Chinese {
             get {
@@ -89,7 +89,7 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Angielski.
+        ///   Looks up a localized string similar to English.
         /// </summary>
         public static string English {
             get {
@@ -108,7 +108,7 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Niemiecki.
+        ///   Looks up a localized string similar to German.
         /// </summary>
         public static string German {
             get {
@@ -136,7 +136,7 @@ namespace LanguageTrainer.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Polski.
+        ///   Looks up a localized string similar to Polish.
         /// </summary>
         public static string Polish {
             get {
