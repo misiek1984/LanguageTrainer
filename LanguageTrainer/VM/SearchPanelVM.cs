@@ -15,8 +15,6 @@ namespace LanguageTrainer.VM
     {
         #region Properties
 
-        private IList<ExpressionEntity> _result;
-
         [SettingsProperty]
         public bool MatchWholeWord { get; set; }
 
