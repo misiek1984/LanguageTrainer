@@ -79,14 +79,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MK.UI.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.UI.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Utilities.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -139,6 +131,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\MK.UI.WPF\MK.UI.WPF.csproj">
+      <Project>{a623a7d2-c055-435d-bcfd-3e76d9389f90}</Project>
+      <Name>MK.UI.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Utilities\MK.Utilities.csproj">
+      <Project>{a2c7083e-bfc4-4f7b-99bc-b0c437924484}</Project>
+      <Name>MK.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

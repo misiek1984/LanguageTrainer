@@ -136,33 +136,6 @@
       <HintPath>..\packages\LiveSDK.5.6.3\lib\net45\Microsoft.Live.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MK.Data">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Data.Xml">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Dropbox">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Dropbox.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Live">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Live.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Logging">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.MyMath">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.MyMath.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Settings">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.UI.WPF">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.UI.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Utilities">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Utilities.dll</HintPath>
-    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -191,9 +164,6 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
-    <Reference Include="WPFLocalizeExtension">
-      <HintPath>..\..\Common\bin\$(Configuration)\WPFLocalizeExtension.dll</HintPath>
-    </Reference>
     <Reference Include="XAMLMarkupExtensions, Version=1.2.1.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\XAMLMarkupExtensions.1.2.1.3\lib\net40\XAMLMarkupExtensions.dll</HintPath>
       <Private>True</Private>
@@ -363,6 +333,46 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\MK.Data.Xml\MK.Data.Xml.csproj">
+      <Project>{b50bb87a-eea1-452b-8393-037e06c4bfde}</Project>
+      <Name>MK.Data.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Data\MK.Data.csproj">
+      <Project>{6dcc7032-3bae-4fe6-b315-55f3aa424d5f}</Project>
+      <Name>MK.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Dropbox\MK.Dropbox.csproj">
+      <Project>{e7fa1d83-e98a-4183-b39f-d41b2a2e085d}</Project>
+      <Name>MK.Dropbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Live\MK.Live.csproj">
+      <Project>{3b0906d7-58ca-4156-8721-0a3c9b6ea880}</Project>
+      <Name>MK.Live</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Logging\MK.Logging.csproj">
+      <Project>{865745f2-b7b2-4940-b99d-7239757ff8d2}</Project>
+      <Name>MK.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.MyMath\MK.MyMath.csproj">
+      <Project>{e5e720ad-e1e5-4ce2-8fd4-3fff0d0511f7}</Project>
+      <Name>MK.MyMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Settings\MK.Settings.csproj">
+      <Project>{e2debcf0-f617-4fcc-874f-d179844a159a}</Project>
+      <Name>MK.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.UI.WPF\MK.UI.WPF.csproj">
+      <Project>{a623a7d2-c055-435d-bcfd-3e76d9389f90}</Project>
+      <Name>MK.UI.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Utilities\MK.Utilities.csproj">
+      <Project>{a2c7083e-bfc4-4f7b-99bc-b0c437924484}</Project>
+      <Name>MK.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\WPFLocalizeExtension\WPFLocalizeExtension.csproj">
+      <Project>{e8c5b094-2cb4-4c26-87f0-351b03612179}</Project>
+      <Name>WPFLocalizeExtension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LanguageTrainer.Common\LanguageTrainer.Common.csproj">
       <Project>{EE321BE8-C686-4784-9442-3AFCAC17B3FA}</Project>
       <Name>LanguageTrainer.Common</Name>

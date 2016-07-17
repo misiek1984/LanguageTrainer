@@ -102,18 +102,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MK.Data">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Data.Xml">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Logging">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="MK.Utilities">
-      <HintPath>..\..\Common\bin\$(Configuration)\MK.Utilities.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -145,6 +133,22 @@
     <Compile Include="RavenDBDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\MK.Data.Xml\MK.Data.Xml.csproj">
+      <Project>{b50bb87a-eea1-452b-8393-037e06c4bfde}</Project>
+      <Name>MK.Data.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Data\MK.Data.csproj">
+      <Project>{6dcc7032-3bae-4fe6-b315-55f3aa424d5f}</Project>
+      <Name>MK.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Logging\MK.Logging.csproj">
+      <Project>{865745f2-b7b2-4940-b99d-7239757ff8d2}</Project>
+      <Name>MK.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\MK.Utilities\MK.Utilities.csproj">
+      <Project>{a2c7083e-bfc4-4f7b-99bc-b0c437924484}</Project>
+      <Name>MK.Utilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LanguageTrainer.Entities\LanguageTrainer.Entities.csproj">
       <Project>{CFF2F5C7-C065-4B86-A985-001C94B96F70}</Project>
       <Name>LanguageTrainer.Entities</Name>
@@ -197,7 +201,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
