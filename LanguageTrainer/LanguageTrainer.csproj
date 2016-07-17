@@ -137,31 +137,31 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MK.Data">
-      <HintPath>..\..\Common\bin\Debug\MK.Data.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.dll</HintPath>
     </Reference>
     <Reference Include="MK.Data.Xml">
-      <HintPath>..\..\Common\bin\Debug\MK.Data.Xml.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.Xml.dll</HintPath>
     </Reference>
     <Reference Include="MK.Dropbox">
-      <HintPath>..\..\Common\bin\Debug\MK.Dropbox.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Dropbox.dll</HintPath>
     </Reference>
     <Reference Include="MK.Live">
-      <HintPath>..\..\Common\bin\Debug\MK.Live.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Live.dll</HintPath>
     </Reference>
     <Reference Include="MK.Logging">
-      <HintPath>..\..\Common\bin\Debug\MK.Logging.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Logging.dll</HintPath>
     </Reference>
     <Reference Include="MK.MyMath">
-      <HintPath>..\..\Common\bin\Debug\MK.MyMath.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.MyMath.dll</HintPath>
     </Reference>
     <Reference Include="MK.Settings">
-      <HintPath>..\..\Common\bin\Debug\MK.Settings.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Settings.dll</HintPath>
     </Reference>
     <Reference Include="MK.UI.WPF">
-      <HintPath>..\..\Common\bin\Debug\MK.UI.WPF.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.UI.WPF.dll</HintPath>
     </Reference>
     <Reference Include="MK.Utilities">
-      <HintPath>..\..\Common\bin\Debug\MK.Utilities.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
@@ -192,7 +192,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
     <Reference Include="WPFLocalizeExtension">
-      <HintPath>..\..\Common\bin\Debug\WPFLocalizeExtension.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\WPFLocalizeExtension.dll</HintPath>
     </Reference>
     <Reference Include="XAMLMarkupExtensions, Version=1.2.1.3, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\XAMLMarkupExtensions.1.2.1.3\lib\net40\XAMLMarkupExtensions.dll</HintPath>

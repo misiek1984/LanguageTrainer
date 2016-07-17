@@ -103,16 +103,16 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="MK.Data">
-      <HintPath>..\..\Common\bin\Debug\MK.Data.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.dll</HintPath>
     </Reference>
     <Reference Include="MK.Data.Xml">
-      <HintPath>..\..\Common\bin\Debug\MK.Data.Xml.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.Xml.dll</HintPath>
     </Reference>
     <Reference Include="MK.Logging">
-      <HintPath>..\..\Common\bin\Debug\MK.Logging.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Logging.dll</HintPath>
     </Reference>
     <Reference Include="MK.Utilities">
-      <HintPath>..\..\Common\bin\Debug\MK.Utilities.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />

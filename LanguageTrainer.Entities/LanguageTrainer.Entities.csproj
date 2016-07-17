@@ -82,10 +82,10 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="MK.Data">
-      <HintPath>..\..\Common\bin\Debug\MK.Data.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Data.dll</HintPath>
     </Reference>
     <Reference Include="MK.Utilities">
-      <HintPath>..\..\Common\bin\Debug\MK.Utilities.dll</HintPath>
+      <HintPath>..\..\Common\bin\$(Configuration)\MK.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
