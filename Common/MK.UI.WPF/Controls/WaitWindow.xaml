@@ -1,0 +1,21 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:MK.UI.WPF.Controls"
+	x:Class="MK.UI.WPF.Controls.WaitWindow"
+	x:Name="Window"
+	Title="WaitWindow" 
+    WindowStyle="None" 
+    SizeToContent="WidthAndHeight" 
+    Background="Transparent"
+    AllowsTransparency="True" 
+    WindowStartupLocation="CenterOwner" 
+	ShowInTaskbar="False"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    KeyUp="Window_KeyUp">
+    <local:CircularProgressBar 
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        local:Message="{Binding Message, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+</Window>

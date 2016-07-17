@@ -1,0 +1,1 @@
+﻿This project is based on the old version of WPFLocalisationExtension project that was available on codeplex (http://wpflocalizeextension.codeplex.com/).

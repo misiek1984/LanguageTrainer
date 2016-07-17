@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="MK.UI.WPF.Controls.WebBrowserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:view="clr-namespace:MK.UI.WPF.Controls"
+             Width="800"
+             Height="600">
+    <WebBrowser x:Name="webBrowser" 
+                Navigated="WebBrowser_OnNavigated"
+                view:WebBrowserView.NavigateTo ="{Binding NavigateTo}"
+                view:WebBrowserView.NavigatedCommand="{Binding NavigatedCommand}" />
+</UserControl>

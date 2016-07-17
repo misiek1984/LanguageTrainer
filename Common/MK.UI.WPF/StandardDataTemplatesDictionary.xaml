@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:MK.UI.WPF.VM"
+                    xmlns:controls="clr-namespace:MK.UI.WPF.Controls">
+    <DataTemplate DataType="{x:Type vm:SimpleInputVM}">
+        <controls:SimpleInput/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WebBrowserVM}">
+        <controls:WebBrowserView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WebLoginVM}">
+        <controls:WebBrowserView/>
+    </DataTemplate>
+</ResourceDictionary>
