@@ -8,7 +8,6 @@ using StructureMap;
 
 namespace MK.Utilities.Tests
 {
-
 	public interface  ITest
 	{
 	    int Id { get; }
