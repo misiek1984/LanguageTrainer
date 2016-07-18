@@ -94,7 +94,7 @@ namespace MK.Utilities
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 if (!ignoreExceptions)
                     throw;
@@ -121,7 +121,7 @@ namespace MK.Utilities
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 if (!ignoreExceptions)
                     throw;
@@ -141,7 +141,7 @@ namespace MK.Utilities
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 if (!ignoreExceptions)
                     throw;
@@ -159,7 +159,7 @@ namespace MK.Utilities
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 if (!ignoreExceptions)
                     throw;

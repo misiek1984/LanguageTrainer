@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.Utilities", "MK.Utilities\MK.Utilities.csproj", "{A2C7083E-BFC4-4F7B-99BC-B0C437924484}"
 EndProject
@@ -38,6 +38,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.Live", "MK.Live\MK.Live.csproj", "{3B0906D7-58CA-4156-8721-0A3C9B6EA880}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.Scripting.Tests", "MK.Scripting.Tests\MK.Scripting.Tests.csproj", "{311742F6-0607-4A6F-B2E9-955F523BAD51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.Data.Xml.Tests", "MK.Data.Xml.Tests\MK.Data.Xml.Tests.csproj", "{AB105431-3C25-49BA-8500-67669D6C224C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -235,6 +237,18 @@ Global
 		{311742F6-0607-4A6F-B2E9-955F523BAD51}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{311742F6-0607-4A6F-B2E9-955F523BAD51}.Release|x86.ActiveCfg = Release|Any CPU
 		{311742F6-0607-4A6F-B2E9-955F523BAD51}.Release|x86.Build.0 = Release|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Debug|x86.Build.0 = Debug|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Release|x86.ActiveCfg = Release|Any CPU
+		{AB105431-3C25-49BA-8500-67669D6C224C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +258,7 @@ Global
 		{17067FDD-DAAD-4753-97A1-6E2E8863412E} = {3D91EC57-B444-49F1-AFFC-189FC2CC8E49}
 		{BD53B20C-E324-49FA-A3DD-F8D070140CAE} = {3D91EC57-B444-49F1-AFFC-189FC2CC8E49}
 		{311742F6-0607-4A6F-B2E9-955F523BAD51} = {3D91EC57-B444-49F1-AFFC-189FC2CC8E49}
+		{AB105431-3C25-49BA-8500-67669D6C224C} = {3D91EC57-B444-49F1-AFFC-189FC2CC8E49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45

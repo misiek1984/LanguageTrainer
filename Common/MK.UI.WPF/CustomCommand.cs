@@ -72,7 +72,6 @@ namespace MK.UI.WPF
 
         protected string GetOperationName(Delegate action)
         {
-            string subOperation = null;
             return action.Method.Name;
         }
 

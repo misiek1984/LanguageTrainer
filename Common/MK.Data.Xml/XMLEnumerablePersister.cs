@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using MK.Utilities;
 
@@ -8,9 +9,9 @@ namespace MK.Data.Xml
     {
         #region Internal Definitions
 
-        public class Wrapper<T> 
+        public class Wrapper<WT> 
         {
-            public List<T> Collection { get; set; }
+            public List<WT> Collection { get; set; }
         }
 
         #endregion
@@ -42,6 +43,29 @@ namespace MK.Data.Xml
             data.NotNull("data");
 
             ExportToFile(System.IO.Path.Combine(Path, "EnumerationOf" + typeof(T).Name), data);
+        }
+
+        public IEnumerable<T> Deserialize(string data)
+        {
+            Wrapper<T> wrapper = _persister.Deserialize(data);
+
+            if (wrapper.Collection == null)
+                return new List<T>();
+
+            return wrapper.Collection;
+        }
+
+        public string Serialize(IEnumerable<T> data)
+        {
+            data.NotNull("data");
+
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Collection = new List<T>();
+
+            foreach (var e in data)
+                wrapper.Collection.Add(e);
+
+            return _persister.Serialize( wrapper);
         }
 
         public IEnumerable<T> ImportFromFile(string path)
