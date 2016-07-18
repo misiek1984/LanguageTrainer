@@ -8,15 +8,15 @@ namespace MK.Data.Xml
     {
         #region Internal Definitions
 
-        public class Pair<K, V> 
+        public class Pair<PK, PV> 
         {
-            public K Key { get; set; }
-            public V Value { get; set; }
+            public PK Key { get; set; }
+            public PV Value { get; set; }
         }
 
-        public class Wrapper<K, V> 
+        public class Wrapper<WK, WV> 
         {
-            public List<Pair<K, V>> Collection { get; set; }
+            public List<Pair<WK, WV>> Collection { get; set; }
         }
 
         #endregion
