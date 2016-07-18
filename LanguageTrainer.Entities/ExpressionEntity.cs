@@ -105,6 +105,11 @@ namespace LanguageTrainer.Entities
             return true;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public override string ToString()
         {
             return Id + " " + Category + " " + Expression;
