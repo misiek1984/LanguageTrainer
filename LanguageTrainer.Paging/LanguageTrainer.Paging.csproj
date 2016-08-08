@@ -92,9 +92,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WPFLocalizeExtension">
-      <HintPath>..\..\Common\bin\$(Configuration)\WPFLocalizeExtension.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constans.cs" />
@@ -140,6 +137,10 @@
     <ProjectReference Include="..\Common\MK.Utilities\MK.Utilities.csproj">
       <Project>{a2c7083e-bfc4-4f7b-99bc-b0c437924484}</Project>
       <Name>MK.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\WPFLocalizeExtension\WPFLocalizeExtension.csproj">
+      <Project>{e8c5b094-2cb4-4c26-87f0-351b03612179}</Project>
+      <Name>WPFLocalizeExtension</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
