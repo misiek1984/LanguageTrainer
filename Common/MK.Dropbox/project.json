@@ -1,0 +1,13 @@
+﻿{
+  "dependencies": {
+    "DropNet": "1.10.23",
+    "RestSharp": "105.0.1"
+  },
+  "frameworks": {
+    "net46": {}
+  },
+  "supports": {},
+  "runtimes": {
+    "win": {}
+  }
+}

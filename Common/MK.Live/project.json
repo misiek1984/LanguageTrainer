@@ -1,0 +1,12 @@
+﻿{
+  "dependencies": {
+    "LiveSDK": "5.6.3"
+  },
+  "frameworks": {
+    "net46": {}
+  },
+  "supports": {},
+  "runtimes": {
+    "win": {}
+  }
+}

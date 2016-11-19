@@ -1,0 +1,13 @@
+﻿{
+  "dependencies": {
+    "EnterpriseLibrary.Common": "6.0.1304.0",
+    "EnterpriseLibrary.Data": "6.0.1304.0"
+  },
+  "frameworks": {
+    "net46": {}
+  },
+  "supports": {},
+  "runtimes": {
+    "win": {}
+  }
+}
