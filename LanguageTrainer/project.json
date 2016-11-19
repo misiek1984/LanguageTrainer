@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "DropNet": "1.10.23.0",
+    "DropNet": "1.10.23",
     "EntityFramework": "5.0.0",
     "Extended.Wpf.Toolkit": "2.0.0",
     "LiveSDK": "5.6.3",
