@@ -60,7 +60,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="project.json" />
     <None Include="Resources\Default.config">
       <SubType>Designer</SubType>
