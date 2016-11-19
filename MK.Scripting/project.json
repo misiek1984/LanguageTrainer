@@ -1,0 +1,12 @@
+﻿{
+  "dependencies": {
+    "Mono.CSharp": "4.0.0.143"
+  },
+  "frameworks": {
+    "net46": {}
+  },
+  "supports": {},
+  "runtimes": {
+    "win": {} 
+  }
+}

@@ -1,0 +1,12 @@
+﻿{
+  "dependencies": {
+    "ICSharpCode.SharpZipLib.dll": "0.85.4.369"
+  },
+  "frameworks": {
+    "net46": {}
+  },
+  "supports": {},
+  "runtimes": {
+    "win": {}
+  }
+}

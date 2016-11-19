@@ -1,0 +1,13 @@
+﻿{
+  "dependencies": {
+    "Ninject": "3.2.2",
+    "structuremap": "3.1.6.186"
+  },
+  "frameworks": {
+    "net46": {}
+  },
+  "supports": {},
+  "runtimes": {
+    "win": {}
+  }
+}
